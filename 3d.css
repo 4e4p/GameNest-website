@@ -1,0 +1,37 @@
+/* GameNest 3D visual layer */
+:root{--neon:#b8ff36;--violet:#9b7bff;--depth-shadow:rgba(0,0,0,.55)}
+body{background:radial-gradient(ellipse at 50% 0%,rgba(155,123,255,.12),transparent 42%),radial-gradient(ellipse at 90% 28%,rgba(184,255,54,.07),transparent 28%),repeating-linear-gradient(to bottom,rgba(255,255,255,.018) 0 1px,transparent 1px 4px),#07080d}
+.ticket-hero{background:linear-gradient(135deg,#151627 0%,#090a11 55%,#17142a 100%);border:1px solid rgba(184,255,54,.7);box-shadow:0 35px 90px rgba(0,0,0,.55),0 0 50px rgba(155,123,255,.13);transform:perspective(1400px) rotateX(2deg);transform-style:preserve-3d}
+.ticket-hero-top{background:linear-gradient(105deg,var(--neon),#e7ff9e);box-shadow:0 8px 24px rgba(184,255,54,.18)}
+.ticket-hero-visual{width:clamp(100px,14vw,180px);height:clamp(100px,14vw,180px);top:22px;right:8%;filter:drop-shadow(0 25px 20px rgba(0,0,0,.5));animation:gn-float 5s ease-in-out infinite;transform:translateZ(60px) rotateY(-12deg)}
+.ticket-hero-visual img{width:100%;height:100%;object-fit:contain}
+.ticket-hero-body h1 em{color:var(--neon);border-color:var(--neon);text-shadow:0 0 24px rgba(184,255,54,.22)}
+.btn.primary,.nav-cta{background:var(--neon);border-color:var(--neon);color:#111}
+.btn.primary:hover,.nav-cta:hover{background:transparent;color:var(--neon)}
+.product-grid,.crew-grid{gap:18px;border:0;perspective:1200px}
+.ticket-stub{border:1px solid rgba(255,255,255,.15);background:linear-gradient(145deg,#171923,#0b0c12 68%);box-shadow:0 12px 0 #05060a,0 22px 36px var(--depth-shadow);transform:perspective(900px) rotateX(2deg) translateZ(0);transform-style:preserve-3d;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s,background .35s}
+.ticket-stub:hover{transform:perspective(900px) rotateX(0) rotateY(-2deg) translateY(-10px) translateZ(18px);box-shadow:0 8px 0 #05060a,0 32px 50px rgba(0,0,0,.65),0 0 28px rgba(184,255,54,.12);border-color:rgba(184,255,54,.65);background:linear-gradient(145deg,#202235,#101119 68%)}
+.ticket-stub.featured{background:linear-gradient(145deg,#eaffbd,#b8ff36);color:#111;box-shadow:0 12px 0 #708d24,0 22px 36px rgba(0,0,0,.45)}
+.ticket-stub.featured:hover{background:linear-gradient(145deg,#f4ffd8,#c9ff68);box-shadow:0 8px 0 #708d24,0 32px 50px rgba(0,0,0,.55),0 0 34px rgba(184,255,54,.3)}
+.ticket-stub.featured .stub-row,.ticket-stub.featured .stub-unit{color:rgba(0,0,0,.62)}
+.ticket-stub.featured .stub-price{color:#111}
+.stub-visual{width:64px;height:64px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2);transform:translateZ(20px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
+.stub-visual img{width:46px;height:46px;filter:drop-shadow(0 6px 7px rgba(0,0,0,.35));transition:transform .4s}
+.ticket-stub:hover .stub-visual img{transform:translateY(-5px) rotate(-8deg) scale(1.08)}
+.ticket-stub h3{transform:translateZ(14px)}
+.product-btn{box-shadow:0 5px 0 rgba(0,0,0,.45);transition:transform .2s,box-shadow .2s,background .3s,color .3s!important}
+.product-btn:hover{transform:translateY(-3px);box-shadow:0 8px 0 rgba(0,0,0,.4)}
+.deal-grid{gap:16px;border:0}
+.deal-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.012));box-shadow:0 12px 24px rgba(0,0,0,.2);transition:transform .35s,box-shadow .35s,border-color .35s}
+.deal-card:hover{transform:perspective(700px) rotateX(3deg) translateY(-8px);box-shadow:0 24px 38px rgba(0,0,0,.38);border-color:rgba(155,123,255,.65)}
+.stamp-icon{color:var(--neon);border-color:var(--neon);box-shadow:0 0 18px rgba(184,255,54,.12)}
+.payment-wrap,.payment-grid,.faq-list,.review-form,.cta-box{box-shadow:0 20px 55px rgba(0,0,0,.3)}
+.payment-chip:hover{transform:translateX(5px);background:rgba(155,123,255,.08)}
+.cta-box{background:linear-gradient(135deg,#d9ff93,var(--neon) 55%,#a8e91e);color:#10120a;box-shadow:0 24px 70px rgba(184,255,54,.13)}
+.cta-box h2,.cta-box .section-label{color:#10120a}
+.cta-box .btn.light{background:#111;color:#fff;border-color:#111;box-shadow:0 6px 0 rgba(0,0,0,.22)}
+.cta-box .btn.light:hover{background:transparent;color:#111;transform:translateY(-3px)}
+.modal-box{box-shadow:0 -24px 90px rgba(0,0,0,.65),0 0 38px rgba(155,123,255,.13)}
+@keyframes gn-float{0%,100%{translate:0 0}50%{translate:0 -12px}}
+@media(max-width:720px){.ticket-hero{transform:none}.ticket-hero-visual{width:72px;height:72px;animation:none;transform:none}.product-grid,.crew-grid{gap:12px}.ticket-stub{transform:none}.ticket-stub:hover{transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){.ticket-hero-visual{animation:none}.ticket-stub,.deal-card,.product-btn{transition:none!important}.ticket-stub:hover,.deal-card:hover{transform:none}}
